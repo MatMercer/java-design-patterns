@@ -7,38 +7,21 @@
 
 package br.edu.ifpr.aplicacao;
 
+import br.edu.ifpr.patterns.abstractfactory.AbstractFactory;
+import br.edu.ifpr.patterns.abstractfactory.GtkFactory;
+
 /**
  *
- * @author 
+ * @author
  */
 public class AbstractFactoryPrincipal {
-   private void processarWindows() {
-      Botao botao = new BotaoWindows();
-      botao.desenhar();
-   } // private void processarWindows()
-
-   private void processarGtk() {
-      Botao botao = new BotaoGtk();
-      botao.desenhar();
-   } // private void processarGtk()
-
-   private void processarMacintoch() {
-      Botao botao = new BotaoMacintoch();
-      botao.desenhar();
-   } // private void processarMacintoch()
-
-   public AbstractFactoryPrincipal() {
-      int ambienteGrafico = 1;
-
-      switch (ambienteGrafico) {
-         case 1 : processarWindows();   break;
-         case 2 : processarGtk();       break;
-         case 3 : processarMacintoch();
-      } // switch (ambienteGrafico)
-   } // public AbstractFactoryPrincipal()
 
    /**
     * @param args os argumentos da linha de comando
     */
-   public static void main(String[] args) { new AbstractFactoryPrincipal(); }
+   public static void main(String[] args) {
+      AbstractFactory factory = new GtkFactory();
+
+      factory.criarBotao();
+   }
 } // public class AbstractFactoryPrincipal
