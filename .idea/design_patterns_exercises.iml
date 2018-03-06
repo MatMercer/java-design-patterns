@@ -3,7 +3,6 @@
   <component name="NewModuleRootManager" inherit-compiler-output="true">
     <exclude-output />
     <content url="file://$MODULE_DIR$">
-      <sourceFolder url="file://$MODULE_DIR$/06 ObserverPatternExercicio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/07 AdapterPatternExercicio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/08 FacadePatternExercicio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/09 PrototypePatternExercicio/src" isTestSource="false" />
@@ -26,8 +25,7 @@
       <sourceFolder url="file://$MODULE_DIR$/03 AbstractFactoryPatternExercicio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/04 CommandPatternExercicio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/05 ChainPatternExercicio/src" isTestSource="false" />
-      <excludeFolder url="file://$MODULE_DIR$/06 ObserverPatternExercicio" />
-      <excludeFolder url="file://$MODULE_DIR$/06 ObserverPatternExercicio/src" />
+      <sourceFolder url="file://$MODULE_DIR$/06 ObserverPatternExercicio/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/07 AdapterPatternExercicio" />
       <excludeFolder url="file://$MODULE_DIR$/07 AdapterPatternExercicio/src" />
       <excludeFolder url="file://$MODULE_DIR$/08 FacadePatternExercicio" />
