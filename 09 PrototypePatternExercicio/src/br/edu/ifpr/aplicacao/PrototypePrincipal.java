@@ -6,7 +6,7 @@
  */
 package br.edu.ifpr.aplicacao;
 
-import br.edu.ifpr.modelo.Pessoa;
+import br.edu.ifpr.modelo.PessoaProt;
 
 /**
  *
@@ -14,13 +14,19 @@ import br.edu.ifpr.modelo.Pessoa;
  */
 public class PrototypePrincipal {
    public PrototypePrincipal() {
-      Pessoa p1 = new Pessoa(1,"Maga Patalógica");
+      PessoaProt p1 = new PessoaProt(1,"Maga Patalógica");
       System.out.println("p1: " + p1);
-      Pessoa p2 = new Pessoa(p1);
-      System.out.println("p2: " + p2);
-      p1.setNome("Maga Patalógica de Patópolis");
-      System.out.println("p1: " + p1);
-      System.out.println("p2: " + p2);
+      PessoaProt p2;
+
+      try {
+         p2 = (PessoaProt) p1.clone();
+         System.out.println("p2: " + p2);
+         p1.setNome("Maga Patalógica de Patópolis");
+         System.out.println("p1: " + p1);
+         System.out.println("p2: " + p2);
+      } catch (CloneNotSupportedException e) {
+         e.printStackTrace();
+      }
    } // public PrototypePrincipal()
 
    /**
