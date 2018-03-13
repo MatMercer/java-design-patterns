@@ -6,23 +6,39 @@
  */
 package br.edu.ifpr.aplicacao;
 
+import br.edu.ifpr.patterns.decorator.Comparador;
+import br.edu.ifpr.patterns.decorator.ComparadorB;
+import br.edu.ifpr.patterns.decorator.ComparadorC;
+import br.edu.ifpr.patterns.decorator.ComparadorSimples;
+
+import static java.lang.System.out;
+
 /**
- *
- * @author 
+ * @author
  */
 public class DecoratorPrincipal {
-   public DecoratorPrincipal() {
-      System.out.println("Comportamento especifico A");
-      if (2 > 1)
-         System.out.println("2 > 1");
-      System.out.println("Comportamento especifico B");
-      if (2 > 3)
-         System.out.println("2 > 3");
-      System.out.println("Comportamento especifico C");
-   } // public DecoratorPrincipal()
+    public DecoratorPrincipal() {
+        out.println("Comportamento A sozinho");
+        Comparador comparadorA = new ComparadorSimples();
+        comparadorA.comparar();
 
-   /**
-    * @param args os argumentos de linha de comando
-    */
-   public static void main(String[] args) { new DecoratorPrincipal(); }
+        out.println("Comportamento A + B");
+        Comparador comparadorB = new ComparadorB(comparadorA);
+        comparadorB.comparar();
+
+        out.println("Comportamento A + B + C");
+        Comparador comparadorC = new ComparadorC(comparadorB);
+        comparadorC.comparar();
+
+        out.println("Comportamento A + C");
+        comparadorC = new ComparadorC(comparadorA);
+        comparadorC.comparar();
+    } // public DecoratorPrincipal()
+
+    /**
+     * @param args os argumentos de linha de comando
+     */
+    public static void main(String[] args) {
+        new DecoratorPrincipal();
+    }
 } // public class DecoratorPrincipal
