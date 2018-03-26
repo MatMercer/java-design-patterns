@@ -6,16 +6,20 @@
  */
 package br.edu.ifpr.aplicacao;
 
+import br.edu.ifpr.patterns.builder.ComandoSql;
+import br.edu.ifpr.patterns.builder.OperacaoSql;
+
+import static java.lang.System.out;
+
 /**
  *
  * @author 
  */
 public class BuilderPrincipal {
    public BuilderPrincipal() {
-      // dependendo da operação que se deseja realizar:
-      // criar o comando SQL INSERT "ou"
-      // criar o comando SQL UPDATE "ou"
-      // criar o comando SQL DELETE
+       ComandoSql comandoSql = ComandoSql.builder().comando("Crazy").operacao(OperacaoSql.INSERT).build();
+
+       out.println(comandoSql);
    } // public BuilderPrincipal()
 
    /**
