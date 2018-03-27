@@ -7,22 +7,28 @@
 
 package br.edu.ifpr.aplicacao;
 
+import br.edu.ifpr.modelo.Lancamento;
+import br.edu.ifpr.modelo.Produto;
+import br.edu.ifpr.patterns.template.VendaFactory;
+import br.edu.ifpr.patterns.template.VendaType;
+
 /**
  *
  * @author 
  */
 public class TemplatePrincipal {
    public TemplatePrincipal() {
-      DataAccessObject dao = new DataAccessObject();
+      final double PRECO = 35;
 
-      dao.connect();
-      dao.select(DataAccessObject.ENTIDADE_PRODUTO);
-      dao.process(DataAccessObject.ENTIDADE_PRODUTO);
+      Lancamento lancamento = new Lancamento(
+              VendaFactory.getVenda(VendaType.PR, new Produto(PRECO))
+      );
 
-      dao.select(DataAccessObject.ENTIDADE_LANCAMENTO);
-      dao.process(DataAccessObject.ENTIDADE_LANCAMENTO);
+      lancamento.lancar();
 
-      dao.disconnect();
+      lancamento.setVenda(VendaFactory.getVenda(VendaType.AM, new Produto(PRECO)));
+
+      lancamento.lancar();
    } // public TemplatePrincipal()
 
    /**

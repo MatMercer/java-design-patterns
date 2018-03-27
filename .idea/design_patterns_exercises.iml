@@ -26,6 +26,7 @@
       <sourceFolder url="file://$MODULE_DIR$/09 PrototypePatternExercicio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/10 DecoratorPatternExercicio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/11 BuilderPatternExercicio/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/design_patterns_exercises/12 TemplateMethodPatternExercicio/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/12 TemplateMethodPatternExercicio" />
       <excludeFolder url="file://$MODULE_DIR$/12 TemplateMethodPatternExercicio/src" />
       <excludeFolder url="file://$MODULE_DIR$/13 IteratorPatternExercicio" />
