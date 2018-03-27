@@ -3,8 +3,7 @@ package br.edu.ifpr.modelo;
 import br.edu.ifpr.patterns.template.Venda;
 
 /**
- *
- * @author 
+ * @author
  */
 public class Lancamento {
     private Venda venda;

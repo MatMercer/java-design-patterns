@@ -1,8 +1,7 @@
 package br.edu.ifpr.modelo;
 
 /**
- *
- * @author 
+ * @author
  */
 public class Produto {
     private double preco;
