@@ -1,10 +1,10 @@
-package br.edu.ifpr.util;
+package br.edu.ifpr.patterns.strategy;
 
 /**
  *
  * @author Romualdo Rubens de Freitas
  */
-public class BubbleSort {
+public class BubbleSort implements SortStrategy {
    public void sort(int[] dados) {
       for (int i = 0; i < (dados.length - 1); i++)
          for (int j = i + 1; j < dados.length; j++) {

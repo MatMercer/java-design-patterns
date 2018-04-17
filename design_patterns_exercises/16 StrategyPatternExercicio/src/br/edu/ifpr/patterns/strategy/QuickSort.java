@@ -1,10 +1,10 @@
-package br.edu.ifpr.util;
+package br.edu.ifpr.patterns.strategy;
 
 /**
  *
  * @author Romualdo Rubens de Freitas
  */
-public class QuickSort {
+public class QuickSort implements SortStrategy {
    private void quicksort(int[] valores, int inicio, int fim) {
       int i = 0,
           j = fim,

@@ -6,8 +6,9 @@
  */
 package br.edu.ifpr.aplicacao;
 
-import br.edu.ifpr.util.BubbleSort;
-import br.edu.ifpr.util.QuickSort;
+import br.edu.ifpr.patterns.strategy.BubbleSort;
+import br.edu.ifpr.patterns.strategy.QuickSort;
+import br.edu.ifpr.patterns.strategy.SortStrategy;
 
 /**
  *
@@ -21,22 +22,11 @@ public class StrategyPrincipal {
 
    public StrategyPrincipal() {
       int[] valores   = { 10, 123, 78, 459, 345, 34, 900, 54, 99, 1 };
-      int   ordenacao = 2;
+      SortStrategy ordenacao = new QuickSort();
 
       System.out.println("==> Antes da classificacao");
       mostrar(valores);
-      switch (ordenacao) {
-         case 1 : {
-            BubbleSort bs = new BubbleSort();
-            bs.sort(valores);
-            break;
-         }
-         case 2: {
-            QuickSort qs = new QuickSort();
-            qs.sort(valores);
-            break;
-         }
-      } // switch (ordenacao)
+      ordenacao.sort(valores);
       System.out.println("==> Depois da classificacao");
       mostrar(valores);
    } // public StrategyPrincipal()
