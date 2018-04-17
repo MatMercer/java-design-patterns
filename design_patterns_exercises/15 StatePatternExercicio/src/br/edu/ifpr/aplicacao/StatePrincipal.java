@@ -10,23 +10,24 @@ package br.edu.ifpr.aplicacao;
 import br.edu.ifpr.modelo.Ventilador;
 
 /**
- *
- * @author 
+ * @author
  */
 public class StatePrincipal {
-   public StatePrincipal() {
-      Ventilador ventilador = new Ventilador();
+    public StatePrincipal() {
+        Ventilador ventilador = new Ventilador();
 
-      long inicio = System.currentTimeMillis();
-      long tempo = 0L;
-      do {
-         ventilador.trocar();
-         tempo = System.currentTimeMillis();
-      } while ((inicio + 2000L) > tempo);
-   } // public StatePrincipal()
+        long inicio = System.currentTimeMillis();
+        long tempo = 0L;
+        do {
+            ventilador.trocar();
+            tempo = System.currentTimeMillis();
+        } while ((inicio + 2000L) > tempo);
+    } // public StatePrincipal()
 
-   /**
-    * @param args os argumentos da linha de comando
-    */
-   public static void main(String[] args) { new StatePrincipal(); }
+    /**
+     * @param args os argumentos da linha de comando
+     */
+    public static void main(String[] args) {
+        new StatePrincipal();
+    }
 } // public class StatePrincipal

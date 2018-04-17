@@ -1,30 +1,36 @@
 package br.edu.ifpr.modelo;
 
+import br.edu.ifpr.patterns.state.Velocidade;
+import br.edu.ifpr.patterns.state.Velocidade1;
+
 /**
- *
- * @author 
+ * @author
  */
 public class Ventilador {
-   private int estadoAtual = 0;
+    private Velocidade velocidade;
 
-   public void trocar() {
-      if (estadoAtual == 0) {
-         estadoAtual = 1;
-         System.out.println("Velocidade UM");
-      } // if (estadoAtual == 0)
-      else
-         if (estadoAtual == 1) {
-            estadoAtual = 2;
-            System.out.println("Velocidade DOIS");
-         } // if (estadoAtual == 1)
-         else
-            if (estadoAtual == 2) {
-               estadoAtual = 3;
-               System.out.println("Velocidade TRES");
-            } // if (estadoAtual == 2)
-            else {
-               estadoAtual = 0;
-               System.out.println("Desligado");
-            } // else - if (estadoAtual == 2)
-   } // public void trocar()
+    public Ventilador() {
+        velocidade = new Velocidade1();
+
+        velocidade.handle();
+    }
+
+    public void trocar() {
+        proximaVelocidade();
+        velocidade.handle();
+    }
+
+    private void proximaVelocidade() {
+        try {
+            String name = velocidade.getClass().toString();
+            int vel = name.charAt(name.length() - 1) - '0';
+
+            vel = vel == 3 ? 1 : vel + 1;
+
+            Class<?> clazz = Class.forName("br.edu.ifpr.patterns.state.Velocidade" + vel);
+            velocidade = (Velocidade) clazz.newInstance();
+        } catch (ClassNotFoundException | IllegalAccessException | InstantiationException e) {
+            e.printStackTrace();
+        }
+    }
 } // public class Ventilador
