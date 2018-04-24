@@ -21,7 +21,7 @@ import java.util.List;
  */
 public class VisitorPrincipal {
     public VisitorPrincipal() {
-        List<Cor> cores = new ArrayList<Cor>();
+        List<Cor> cores = new ArrayList<>();
 
         cores.add(new Vermelho());
         cores.add(new Azul());
