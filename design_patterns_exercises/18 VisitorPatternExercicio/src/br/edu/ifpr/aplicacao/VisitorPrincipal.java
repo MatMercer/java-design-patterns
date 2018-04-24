@@ -10,39 +10,45 @@ package br.edu.ifpr.aplicacao;
 import br.edu.ifpr.modelo.Azul;
 import br.edu.ifpr.modelo.Cor;
 import br.edu.ifpr.modelo.Vermelho;
+import br.edu.ifpr.patterns.visitor.ChamarVisitor;
+import br.edu.ifpr.patterns.visitor.TotalizadorVisitor;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- *
- * @author 
+ * @author
  */
 public class VisitorPrincipal {
-   public VisitorPrincipal() {
-      List<Cor> cores = new ArrayList<Cor>();
+    public VisitorPrincipal() {
+        List<Cor> cores = new ArrayList<Cor>();
 
-      cores.add(new Vermelho());
-      cores.add(new Azul());
-      cores.add(new Azul());
-      cores.add(new Azul());
-      cores.add(new Vermelho());
-      cores.add(new Azul());
-      cores.add(new Vermelho());
-      cores.add(new Azul());
-      cores.add(new Vermelho());
-      cores.add(new Azul());
+        cores.add(new Vermelho());
+        cores.add(new Azul());
+        cores.add(new Azul());
+        cores.add(new Azul());
+        cores.add(new Vermelho());
+        cores.add(new Azul());
+        cores.add(new Vermelho());
+        cores.add(new Azul());
+        cores.add(new Vermelho());
+        cores.add(new Azul());
 
-      for (Cor cor : cores) {
-         cor.totalizar();
-         cor.chamar();
-      } // for (Cor cor : cores)
+        TotalizadorVisitor total = new TotalizadorVisitor();
+        ChamarVisitor chamar = new ChamarVisitor();
 
-      Cor.mostrar();
-   } // public VisitorPrincipal()
+        for (Cor cor : cores) {
+            cor.visitar(total);
+            cor.visitar(chamar);
+        } // for (Cor cor : cores)
 
-   /**
-    * @param args os argumentos da linha de comando
-    */
-   public static void main(String[] args) { new VisitorPrincipal(); }
+        total.mostrar();
+    } // public VisitorPrincipal()
+
+    /**
+     * @param args os argumentos da linha de comando
+     */
+    public static void main(String[] args) {
+        new VisitorPrincipal();
+    }
 } // public class VisitorPrincipal

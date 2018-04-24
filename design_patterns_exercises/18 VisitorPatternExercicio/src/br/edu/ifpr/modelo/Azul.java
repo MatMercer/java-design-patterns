@@ -1,15 +1,13 @@
 package br.edu.ifpr.modelo;
 
+import br.edu.ifpr.patterns.visitor.CorVisitor;
+
 /**
- *
- * @author 
+ * @author
  */
 public class Azul extends Cor {
-   @Override
-   public void totalizar() { ++totalAzul; }
-
-   @Override
-   public void chamar() { ceu(); }
-
-   public void ceu() { System.out.println("Ceu azul."); }
+    @Override
+    public void visitar(CorVisitor visitor) {
+        visitor.visitar(this);
+    }
 } // public class Azul extends Cor

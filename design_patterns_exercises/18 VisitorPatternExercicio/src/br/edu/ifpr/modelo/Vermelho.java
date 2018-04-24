@@ -1,15 +1,13 @@
 package br.edu.ifpr.modelo;
 
+import br.edu.ifpr.patterns.visitor.CorVisitor;
+
 /**
- *
- * @author 
+ * @author
  */
 public class Vermelho extends Cor {
-   @Override
-   public void totalizar() { ++totalVermelho; }
-
-   @Override
-   public void chamar() { olhos(); }
-
-   public void olhos() { System.out.println("Olhos vermelhos."); }
+    @Override
+    public void visitar(CorVisitor visitor) {
+        visitor.visitar(this);
+    }
 } // public class Vermelho extends Cor
