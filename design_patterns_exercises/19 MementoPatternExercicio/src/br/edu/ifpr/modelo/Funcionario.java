@@ -9,7 +9,6 @@ public class Funcionario {
    private double salario;
    private double proventos;
    private double despesas;
-   private double salarioLiquido;
 
    public Funcionario(String nome, double salario) {
       setNome(nome);
@@ -20,15 +19,34 @@ public class Funcionario {
    public void setSalario(double salario) { this.salario = salario; }
    public void setProventos(double proventos) { this.proventos = proventos; }
    public void setDespesas(double despesas) { this.despesas = despesas; }
+
+   public void save() {
+      Memento.salario = this.salario;
+   }
+
+   public void restore() {
+       this.salario = Memento.salario;
+   }
+
    // getters
    public String getNome() { return nome; }
    public double getSalario() { return salario; }
    public double getProventos() { return proventos; }
    public double getDespesas() { return despesas; }
 
-   public double calcularSalarioLiquido() {
-      salarioLiquido = salario + proventos - despesas;
-      
-      return salarioLiquido;
+   public void calcularSalarioLiquido() {
+      salario =  salario + proventos - despesas;
    } // public double calcularSalarioLiquido()
+
+   public static class Memento {
+      private static double salario;
+
+      public Memento(double salari) {
+         salario = salari;
+      }
+
+      private double getSavedSalario() {
+         return salario;
+      }
+   }
 } // public class Funcionario

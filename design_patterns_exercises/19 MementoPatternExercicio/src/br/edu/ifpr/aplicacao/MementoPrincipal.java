@@ -6,17 +6,26 @@
  */
 package br.edu.ifpr.aplicacao;
 
+import br.edu.ifpr.modelo.Funcionario;
+
 /**
  *
  * @author 
  */
 public class MementoPrincipal {
    public MementoPrincipal() {
-      // A aplicação deve processar vários objetos Funcionario de tal forma que
-      // seja possível realizar cálculos de salário mínimo alterando-se os
-      // valores dos atributos: salario, proventos e despesas para efeito de
-      // previsão. Após as simulações os valores iniciais dos atributos
-      // mencionados devem ser restaurados.
+      Funcionario funcionario = new Funcionario("Jose", 3424.333d);
+      funcionario.setDespesas(2342.33d);
+      funcionario.setProventos(32.44d);
+
+      System.out.println(funcionario.getSalario());
+      funcionario.save();
+
+      funcionario.calcularSalarioLiquido();
+      System.out.println(funcionario.getSalario());
+
+      funcionario.restore();
+      System.out.println(funcionario.getSalario());
    } // public MementoPrincipal()
    /**
     * @param args os argumentos de linha de comando

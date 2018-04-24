@@ -8,6 +8,7 @@
       <sourceFolder url="file://$MODULE_DIR$/design_patterns_exercises/16 StrategyPatternExercicio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/design_patterns_exercises/17 ProxyPatternExercicio/src" isTestSource="false" />
       <sourceFolder url="file://$MODULE_DIR$/design_patterns_exercises/18 VisitorPatternExercicio/src" isTestSource="false" />
+      <sourceFolder url="file://$MODULE_DIR$/design_patterns_exercises/19 MementoPatternExercicio/src" isTestSource="false" />
       <excludeFolder url="file://$MODULE_DIR$/design_patterns" />
     </content>
     <orderEntry type="inheritedJdk" />
