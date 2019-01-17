@@ -1,3 +1,3 @@
 # Java Design Patterns
 
-Uma coleção de design patterns implementados em Java. Este projeto contém exercícios práticos.
+A collection of design patterns implemented in Java for study.
